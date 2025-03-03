@@ -31,10 +31,7 @@
   environment.systemPackages = with pkgs; [
     at-spi2-atk
     qt6.qtwayland
-    psi-notify
-    poweralertd
     playerctl
-    psmisc
     grim
     slurp
     imagemagick
@@ -50,7 +47,6 @@
     waybar
     rofi-wayland
     dunst
-    avizo
     wlogout
     gifsicle
   ];

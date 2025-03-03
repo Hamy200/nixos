@@ -9,7 +9,7 @@
     dhcpcd.extraConfig = "nohook resolv.conf";
 
     # If using NetworkManager:
-    networkmanager.dns = "none";
+    # networkmanager.dns = "none";
 
     # If using resolvconf:
     resolvconf = {

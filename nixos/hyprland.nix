@@ -14,13 +14,11 @@
     hypridle
     hyprpaper
 
-    inputs.wezterm.packages.${pkgs.system}.default
     cool-retro-term
 
     starship
     helix
 
-    qutebrowser
     zathura
     mpv
     imv

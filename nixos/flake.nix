@@ -4,7 +4,6 @@
   inputs = {
       nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
       rust-overlay.url = "github:oxalica/rust-overlay";
-      wezterm.url = "github:wez/wezterm?dir=nix";
   };
 
   outputs = { nixpkgs, ... } @ inputs:
@@ -14,8 +13,7 @@
       modules = [
         ./configuration.nix
         ./hardware-configuration.nix
-        ./nvidia.nix
-        # ./disable-nvidia.nix
+        ./disable-nvidia.nix
         ./opengl.nix
         # ./fingerprint-scanner.nix
         # ./clamav-scanner.nix
@@ -45,8 +43,8 @@
         ./environment-variables.nix
         ./bluetooth.nix
         ./networking.nix
-        # ./mac-randomize.nix
-        # ./open-ssh.nix
+        ./mac-randomize.nix
+        ./open-ssh.nix
         ./mosh.nix
         ./firewall.nix
         ./dns.nix

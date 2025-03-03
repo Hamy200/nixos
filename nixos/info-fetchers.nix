@@ -2,7 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-    neofetch
+    fastfetch
     onefetch
     ipfetch
     cpufetch
@@ -15,13 +15,11 @@
     zfxtop
     kmon
 
-    # vulkan-tools
+    vulkan-tools
     # opencl-info
     # clinfo
     # vdpauinfo
     # libva-utils
-    nvtopPackages.nvidia
-    nvtopPackages.intel
     wlr-randr
     gpu-viewer
     dig

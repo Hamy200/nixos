@@ -26,7 +26,6 @@
   services.fail2ban.enable = true;
   security.pam.services.hyprlock = {};
   # security.polkit.enable = true;
-  programs.browserpass.enable = true;
   services.clamav = {
     daemon.enable = true;
     fangfrisch.enable = true;
@@ -54,26 +53,6 @@
         executable = "${lib.getBin pkgs.discord}/bin/discord";
         profile = "${pkgs.firejail}/etc/firejail/discord.profile";
       };
-      slack = {
-        executable = "${lib.getBin pkgs.slack}/bin/slack";
-        profile = "${pkgs.firejail}/etc/firejail/slack.profile";
-      };
-      telegram-desktop = {
-        executable = "${lib.getBin pkgs.tdesktop}/bin/telegram-desktop";
-        profile = "${pkgs.firejail}/etc/firejail/telegram-desktop.profile";
-      };
-      brave = {
-        executable = "${lib.getBin pkgs.brave}/bin/brave";
-        profile = "${pkgs.firejail}/etc/firejail/brave.profile";
-      };
-      qutebrowser = {
-        executable = "${lib.getBin pkgs.qutebrowser}/bin/qutebrowser";
-        profile = "${pkgs.firejail}/etc/firejail/qutebrowser.profile";
-      };
-      thunar = {
-        executable = "${lib.getBin pkgs.xfce.thunar}/bin/thunar";
-        profile = "${pkgs.firejail}/etc/firejail/thunar.profile";
-      };
       vscodium = {
         executable = "${lib.getBin pkgs.vscodium}/bin/vscodium";
         profile = "${pkgs.firejail}/etc/firejail/vscodium.profile";
@@ -88,14 +67,5 @@
 
     # passphrase2pgp
     pass-wayland
-    pass2csv
-    passExtensions.pass-tomb
-    passExtensions.pass-update
-    passExtensions.pass-otp
-    passExtensions.pass-import
-    passExtensions.pass-audit
-    tomb
-    pwgen
-    pwgen-secure
   ];
 }
