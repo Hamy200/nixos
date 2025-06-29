@@ -25,6 +25,7 @@
   };
 
   users.users.hc = {
+    shell = pkgs.zsh;
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
   };
