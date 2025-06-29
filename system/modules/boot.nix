@@ -18,7 +18,7 @@
       luks.devices = {
         crypt = {
           device = "/dev/disk/by-label/crypt-container";
-          preLMV = true;
+          preLVM = true;
         };
       };
     };
