@@ -17,7 +17,8 @@
         homeModules = ./home/modules;
         systemModules = ./system/modules;
         homeDotfiles = ./home/dotfiles;
-        dotfiles = ./dotfiles;
+        dotfiles = ./tocopy/dotfiles;
+        tocopy = ./tocopy;
       };
     in
   {

@@ -8,6 +8,7 @@
       mpvpaper
       wl-clipboard
       htop
+      hyprshot
     ];
    
    programs.fzf.enable = true;

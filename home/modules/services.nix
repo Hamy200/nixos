@@ -5,6 +5,10 @@
       enable = true;
       allowImages = true;
     };
+  
+    dunst = {
+      enable = true;
+    };
   };
 
 }
