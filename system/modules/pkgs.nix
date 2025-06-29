@@ -5,6 +5,7 @@
     wget
     git
     clinfo
+    killall
   ];
 
   fonts.packages = with pkgs; [

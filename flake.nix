@@ -9,16 +9,28 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
 
-      specialArgs = { inherit inputs; };
+  outputs = { self, nixpkgs, home-manager, ... }@inputs: 
+    let 
+      vars = {
+        base = ./.;
+        homeModules = ./home/modules;
+        systemModules = ./system/modules;
+        homeDotfiles = ./home/dotfiles;
+        dotfiles = ./dotfiles;
+      };
+    in
+  {
+    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+    
+      specialArgs = { inherit inputs vars; };
       modules = [
         ./system/configuration.nix
       	home-manager.nixosModules.home-manager {
 	  home-manager.useGlobalPkgs = true;
 	  home-manager.useUserPackages = true;
 	  home-manager.users.hc = import ./home/home.nix;
+	  home-manager.extraSpecialArgs = {inherit inputs vars;};
         }
      ];
       

@@ -1,6 +1,7 @@
 
 
-{ config, pkgs, inputs, ...}:
+
+{ config, pkgs, inputs, vars, ...}:
 
 {
   home.username = "hc";
@@ -9,9 +10,11 @@
   home.sessionVariables = {
     FZF_COMPLETION_TRIGGER = ",";
   };
-
+  
   imports = [
-    ./modules/pkgs.nix 
+    "${vars.homeModules}/pkgs.nix"
+    "${vars.homeModules}/services.nix"
+    "${vars.homeModules}/copy.nix"
   ];
 
 }

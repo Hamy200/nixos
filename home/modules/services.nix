@@ -1,11 +1,11 @@
 {config, inputs, ...}:
 {
   services = {
-    pipewire = {
+    cliphist = {
       enable = true;
-      pulse.enable = true;
+      allowImages = true;
     };
-    
-    envfs.enable = true;
   };
+
 }
+

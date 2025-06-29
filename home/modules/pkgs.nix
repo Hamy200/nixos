@@ -1,9 +1,13 @@
-{inputs, pkgs, ...}: {
+{inputs, pkgs, vars, ...}: {
     
     home.packages = with pkgs; [
       fastfetch
       librewolf
       tree
+      wl-gammarelay-rs
+      mpvpaper
+      wl-clipboard
+      htop
     ];
    
    programs.fzf.enable = true;
@@ -13,7 +17,7 @@
       enable = true;
       font.name = "DejaVuSansMNFM";
       font.size = 12;
-      extraConfig = builtins.readFile ../dotfiles/kitty.conf;
+      extraConfig = builtins.readFile "${vars.homeDotfiles}/kitty.conf";
       shellIntegration.enableZshIntegration = true;
     };
 
@@ -24,7 +28,7 @@
       syntaxHighlighting.enable = true;
       
       shellAliases = {
-        update = "cd /home/hc/.nixos/ && sudo nixos-rebuild switch --upgrade --flake";
+        update = " sudo nixos-rebuild switch --upgrade --flake /home/hc/.nixos";
       };
 
       oh-my-zsh = {
@@ -40,6 +44,9 @@
       enable = true;
     };
 
+    programs.wofi = {
+      enable = true;
+    };
 
     programs.home-manager.enable = true;
 }
