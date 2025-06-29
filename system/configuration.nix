@@ -19,8 +19,9 @@
     NIXOS_OZONE_WL = "1"; #to allow for electron rendering
   };
 
-  hardware = {
-    graphics.enable = true;
+  zramSwap = {
+    enable = true;
+    memoryPercent = 25;
   };
 
   users.users.hc = {

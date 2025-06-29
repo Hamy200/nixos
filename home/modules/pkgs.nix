@@ -2,15 +2,16 @@
     
     home.packages = with pkgs; [
       fastfetch
-      firefox
+      librewolf
       tree
       fzf
     ];
     
     programs.kitty = {
       enable = true;
-      font.name = "JetBrainsMono Nerd Font";
-      font.size = 10;
+      font.name = "DejaVuSansMNFM";
+      font.size = 12;
+      extraConfig = builtins.readFile ../dotfiles/kitty.conf;
     };
 
     programs.waybar = {
