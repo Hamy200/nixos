@@ -12,6 +12,12 @@
       font.name = "JetBrainsMono Nerd Font";
       font.size = 10;
     };
+
+    programs.waybar = {
+      enable = true;
+    };
+
+
     programs.home-manager.enable = true;
 }
     
