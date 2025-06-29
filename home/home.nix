@@ -8,7 +8,7 @@
   home.stateVersion = "25.05";
 
   imports = [
-    ./pkgs.nix 
+    ./modules/pkgs.nix 
   ];
 
 }
