@@ -4,5 +4,6 @@
   home.file.".config" = {
     source = "${vars.dotfiles}";
     recursive = true;
+    executable = true;
   };  
 }
