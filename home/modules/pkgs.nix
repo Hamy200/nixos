@@ -24,7 +24,7 @@
       syntaxHighlighting.enable = true;
       
       shellAliases = {
-        update = "sudo nixos-rebuild switch --flake /home/hc/.nixos/";
+        update = "cd /home/hc/.nixos/ && sudo nixos-rebuild switch --upgrade --flake";
       };
 
       oh-my-zsh = {
