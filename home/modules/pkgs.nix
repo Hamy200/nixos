@@ -12,6 +12,7 @@
       font.name = "DejaVuSansMNFM";
       font.size = 12;
       extraConfig = builtins.readFile ../dotfiles/kitty.conf;
+      shellIntegration.enableBashIntegration = true;
     };
 
     programs.waybar = {
