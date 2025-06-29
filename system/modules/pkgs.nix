@@ -5,4 +5,13 @@
     wget
     git
   ];
+
+  fonts.packages = with pkgs; [
+    nerd-fonts.jetbrains-mono
+  ];
+
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
 }

@@ -12,18 +12,7 @@
 
   networking.hostName = "nixos"; # Define your hostname.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
-
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
   
-  fonts.packages = with pkgs;[
-   nerd-fonts.jetbrains-mono
-   dejavu_fonts
-  ];
-
-
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
   environment.sessionVariables = {
