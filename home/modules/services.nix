@@ -9,7 +9,10 @@
     dunst = {
       enable = true;
     };
+  
   };
+
+  
 
 }
 

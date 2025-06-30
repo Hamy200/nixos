@@ -2,7 +2,6 @@
     
     home.packages = with pkgs; [
       fastfetch
-      librewolf
       tree
       wl-gammarelay-rs
       mpvpaper
@@ -13,6 +12,9 @@
       nwg-look
       p7zip
       capitaine-cursors
+      gruvbox-plus-icons
+      nemo
+      hyprsunset
     ];
    
    programs.fzf.enable = true;
@@ -44,6 +46,12 @@
       
     };
 
+    programs.librewolf = {
+      enable = true;
+      settings = {
+        "ui.systemUsesDarkTheme" = 1;
+      };
+    };
 
     programs.waybar = {
       enable = true;
@@ -52,6 +60,21 @@
     programs.wofi = {
       enable = true;
     };
+
+    programs.yazi = {
+      enable = true;
+      enableZshIntegration = true;
+      flavors = {
+        kanagawa-yazi = "${vars.homeModules}/kanagawa-yazi";
+      }; 
+
+      theme = {
+        flavour = {
+        dark = "kanagawa-yazi";
+        };
+      };
+    };
+
 
     programs.home-manager.enable = true;
 }
