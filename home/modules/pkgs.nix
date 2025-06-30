@@ -9,6 +9,10 @@
       wl-clipboard
       htop
       hyprshot
+      hyprcursor
+      nwg-look
+      p7zip
+      capitaine-cursors
     ];
    
    programs.fzf.enable = true;

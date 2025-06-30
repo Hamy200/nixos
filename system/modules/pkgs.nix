@@ -6,6 +6,7 @@
     git
     clinfo
     killall
+    vulkan-tools
   ];
 
   fonts.packages = with pkgs; [

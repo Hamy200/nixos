@@ -7,5 +7,9 @@
     };
     
     envfs.enable = true;
+
+    udev.extraRules = ''
+    ACTION=="add", SUBSYSTEM=="pci", DRIVER=="pcieport", ATTR{power/wakeup}="disabled"
+    '';
   };
 }
