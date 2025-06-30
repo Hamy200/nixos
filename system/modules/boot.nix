@@ -45,9 +45,9 @@
       };
     };
     
-    kernelModules = ["amdgpu"];
+    kernelModules = [];
     extraModulePackages = [];
-    kernelParams = ["amdgpu.cik_support=1" "amdgpu.si_support=1" ];
+    kernelParams = [];
 
     
     kernelPackages = pkgs.linuxPackages_latest;
