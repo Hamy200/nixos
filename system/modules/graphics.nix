@@ -8,10 +8,13 @@
         rocmPackages.clr.icd
         amdvlk
       ];
-     
+  
       extraPackages32 = with pkgs; [
         driversi686Linux.amdvlk
       ];
       
-  }
+  };
+
+  hardware.opengl.driSupport32Bit = true;
+  hardware.opengl.enable = true;
 }

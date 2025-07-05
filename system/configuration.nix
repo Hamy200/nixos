@@ -8,6 +8,7 @@
       ./modules/services.nix
       ./modules/pkgs.nix
       ./modules/locale.nix
+      ./modules/virtualisation.nix
     ];
 
   networking.hostName = "nixos"; # Define your hostname.

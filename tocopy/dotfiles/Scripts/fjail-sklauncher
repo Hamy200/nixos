@@ -1,0 +1,2 @@
+firejail --profile=/.firejail/sklauncher/sklauncher.profile --private=/.firejail/sklauncher java -jar /usr/local/games/SKlauncher-3.2.12.jar
+

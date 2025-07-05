@@ -34,9 +34,9 @@
 
     initrd = {
       availableKernelModules = [
-	"amdgpu" "xhci_pci" "ahci" "nvme" "usb_storage" "usbhid" "sd_mod"
+         "vfio-pci" "vfio" "vfio_iommu_type1" "amdgpu" "xhci_pci" "ahci" "nvme" "usb_storage" "usbhid" "sd_mod"
       ];
-      kernelModules = ["amdgpu" ];
+      kernelModules = ["vfio-pci" "vfio-pci" "vfio_iommu_type1" "amdgpu"];
       luks.devices = {
         crypt = {
           device = "/dev/disk/by-label/crypt-container";
@@ -45,15 +45,22 @@
       };
     };
     
-    kernelModules = [];
+    kernelModules = ["kvm-amd" "vfio-pci" "vfio" "vfio_iommu_type1" "amdgpu"];
     extraModulePackages = [];
-    kernelParams = [];
+
+    kernelParams = ["amd_iommu=on" "amd_iommu=pt" "kvm.ignore_msrs=1"];
+    extraModprobeConfig = "options vfio-pci ids=1002:744c,1002:ab30";
 
     
     kernelPackages = pkgs.linuxPackages_latest;
     
+    supportedFilesystems = ["ntfs"]; 
   };
 
+  fileSystems."/media/Hamza HDD" = {
+    device = "/dev/sda1";
+    fsType = "ntfs-3g";
+  };
   hardware.firmware = [pkgs.linux-firmware];
   
 }
