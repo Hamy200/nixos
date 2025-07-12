@@ -33,10 +33,14 @@
     };
 
     initrd = {
+     #availableKernelModules = [
+     #    "vfio-pci" "vfio" "vfio_iommu_type1" "amdgpu" "xhci_pci" "ahci" "nvme" "usb_storage" "usbhid" "sd_mod"
+     # ];
+      #kernelModules = ["vfio-pci" "vfio-pci" "vfio_iommu_type1" "amdgpu"];
+      kernelModules = ["amdgpu"];
       availableKernelModules = [
-         "vfio-pci" "vfio" "vfio_iommu_type1" "amdgpu" "xhci_pci" "ahci" "nvme" "usb_storage" "usbhid" "sd_mod"
+         "amdgpu" "xhci_pci" "ahci" "nvme" "usb_storage" "usbhid" "sd_mod"
       ];
-      kernelModules = ["vfio-pci" "vfio-pci" "vfio_iommu_type1" "amdgpu"];
       luks.devices = {
         crypt = {
           device = "/dev/disk/by-label/crypt-container";
@@ -45,11 +49,12 @@
       };
     };
     
-    kernelModules = ["kvm-amd" "vfio-pci" "vfio" "vfio_iommu_type1" "amdgpu"];
+    #kernelModules = ["kvm-amd" "vfio-pci" "vfio" "vfio_iommu_type1" "amdgpu"];
+    kernelModules = ["amdgpu"];
     extraModulePackages = [];
 
-    kernelParams = ["amd_iommu=on" "amd_iommu=pt" "kvm.ignore_msrs=1"];
-    extraModprobeConfig = "options vfio-pci ids=1002:744c,1002:ab30";
+   # kernelParams = ["amd_iommu=on" "amd_iommu=pt" "kvm.ignore_msrs=1"];
+   # extraModprobeConfig = "options vfio-pci ids=1002:744c,1002:ab30";
 
     
     kernelPackages = pkgs.linuxPackages_latest;
@@ -60,6 +65,9 @@
   fileSystems."/media/Hamza HDD" = {
     device = "/dev/sda1";
     fsType = "ntfs-3g";
+    options = [
+      "nofail"
+    ];
   };
   hardware.firmware = [pkgs.linux-firmware];
   

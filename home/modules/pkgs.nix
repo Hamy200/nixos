@@ -21,6 +21,11 @@
       winetricks
       glxinfo
       mpv
+      marktext
+      unar
+      tesseract
+      qbittorrent
+
     ];
    
    programs.fzf.enable = true;
@@ -41,11 +46,11 @@
       syntaxHighlighting.enable = true;
       
       shellAliases = {
-        update = " sudo nixos-rebuild switch --upgrade --flake /home/hc/.nixos";
+        up = " sudo nixos-rebuild switch --upgrade --flake /home/hc/.nixos";
 	clean  = "nix-collect-garbage -d";
   	update-flakes = "nix flake update --flake /home/hc/.nixos/";
-        hpkgs = "vim /home/hc/.nixos/home/modules/pkgs.nix";
-        spkgs = "vim /home/hc/.nixos/system/modules/pkgs.nix";
+        hpkgs = "nvim /home/hc/.nixos/home/modules/pkgs.nix";
+        spkgs = "nvim /home/hc/.nixos/system/modules/pkgs.nix";
 	
       };
 
@@ -99,30 +104,15 @@
       };
     };
 
-    i18n.inputMethod = {
+
+    programs.neovim = {
       enable = true;
-      type = "fcitx5";
-     
-      fcitx5 = {
-        addons = [
-          pkgs.fcitx5-mozc
-          pkgs.fcitx5-gtk
-          pkgs.fcitx5-tokyonight
-        ];
-        waylandFrontend = true;
-        settings.addons = {
-          classicui.globalSection.Theme = "Tokyonight-Storm";
-        };
-        settings.inputMethod = {
-          "Groups/0"= {Name="Main"; "Default Layout"="gb"; "DefaultIM"="mozc";};
-  	  "Groups/0/Items/0" = {Name="keyboard-gb"; Layout="";};
-	  "Groups/0/Items/1" = {Name="mozc"; Layout="";}; 
-          GroupOrder={"0"="Main";};
-        };
-      };
+      extraConfig = 
+      ''
+	set clipboard+=unnamedplus
 
-
-    };   
+      '';
+    };
   
     programs.home-manager.enable = true;
 }

@@ -13,15 +13,9 @@
   
   imports = [
     "${vars.homeModules}/pkgs.nix"
-
-
-
-
-
-
-
     "${vars.homeModules}/services.nix"
     "${vars.homeModules}/copy.nix"
+    "${vars.homeModules}/desktop.nix"
   ];
 
 }
