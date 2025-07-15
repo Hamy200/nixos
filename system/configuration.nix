@@ -16,12 +16,13 @@
   
   nix.settings.experimental-features = ["nix-command" "flakes"];
   nix.settings.auto-optimise-store = true;
+  nixpkgs.config.allowUnfree = true;
 
 
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1"; #to allow for electron rendering
     QT_IM_MODULE="fcitx";  
-    XMODIFIERS="@im=fcitx";
+    #XMODIFIERS="@im=fcitx";
     ANKI_WAYLAND="1";
     
   };

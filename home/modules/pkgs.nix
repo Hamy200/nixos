@@ -25,7 +25,6 @@
       unar
       tesseract
       qbittorrent
-
     ];
    
    programs.fzf.enable = true;
@@ -47,10 +46,12 @@
       
       shellAliases = {
         up = " sudo nixos-rebuild switch --upgrade --flake /home/hc/.nixos";
-	clean  = "nix-collect-garbage -d";
+	clean  = "nix-collect-garbage -d && sudo nix-collect-garbage -d";
+	gc-store-clean = "nix-store --gc";
   	update-flakes = "nix flake update --flake /home/hc/.nixos/";
         hpkgs = "nvim /home/hc/.nixos/home/modules/pkgs.nix";
         spkgs = "nvim /home/hc/.nixos/system/modules/pkgs.nix";
+	analyse-store = "sudo nix-shell -p ncdu --command 'ncdu /nix'";
 	
       };
 

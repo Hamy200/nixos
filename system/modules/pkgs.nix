@@ -11,6 +11,7 @@
     looking-glass-client
     qemu
     ydotool
+    liquidctl
   ];
 
   fonts.packages = with pkgs; [
