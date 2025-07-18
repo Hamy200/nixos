@@ -1,6 +1,6 @@
 #!/bin/bash
 
-WALLPAPER_DIR="$HOME/Pictures/Wallpapers/Live/"
+WALLPAPER_DIR="$HOME/Pictures/Wallpapers/"
 
 WALLPAPER=$(find "$WALLPAPER_DIR" -type f | shuf -n 1)
 

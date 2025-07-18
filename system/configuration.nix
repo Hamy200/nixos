@@ -24,6 +24,7 @@
     QT_IM_MODULE="fcitx";  
     #XMODIFIERS="@im=fcitx";
     ANKI_WAYLAND="1";
+    VDPAU_DRIVER="radeonsi";
     
   };
 

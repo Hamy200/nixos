@@ -25,6 +25,13 @@
       unar
       tesseract
       qbittorrent
+      lutris
+      protonup-qt
+      (python313.withPackages (
+  	ps: with ps; [
+	  pip
+	]
+      ))
     ];
    
    programs.fzf.enable = true;
