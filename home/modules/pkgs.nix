@@ -26,7 +26,9 @@
       tesseract
       qbittorrent
       lutris
+      cdrtools
       protonup-qt
+      libsForQt5.qt5.qtwayland
       (python313.withPackages (
   	ps: with ps; [
 	  pip
@@ -34,6 +36,7 @@
       ))
     ];
    
+
    programs.fzf.enable = true;
    programs.fzf.enableZshIntegration = true;
  

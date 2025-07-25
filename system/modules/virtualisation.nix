@@ -1,10 +1,16 @@
 {config, inputs, pkgs, ...}:
 {
+
+  
+
+
+
+
   users.groups.libvirtd.members = ["hc"];
   virtualisation.libvirtd.enable = true;
   virtualisation.spiceUSBRedirection.enable = true;
   
- # systemd.tmpfiles.rules = ["f /dev/shm/looking-glass 0660 hc qemu-libvirtd -"];
+  systemd.tmpfiles.rules = ["f /dev/shm/looking-glass 0660 hc qemu-libvirtd -"];
   
  # virtualisation = {
  #    libvirtd = {
